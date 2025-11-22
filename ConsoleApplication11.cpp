@@ -1,40 +1,42 @@
 #include <iostream>
-
 using namespace std;
 
 class Vehicle {
 public:
-    virtual double calculateTime(double distance) const = 0;
-    virtual double calculateCost(double distance, double weight) const = 0;
-    virtual ~Vehicle() = default;
+    double calculateTime(double distance) const {
+        return distance / 50.0;
+    }
+    double calculateCost(double distance, double weight) const {
+        return distance * 0.3 + weight * 0.05;
+    }
 };
 
 class Car : public Vehicle {
 public:
-    double calculateTime(double distance) const override {
+    double calculateTime(double distance) const {
         return distance / 80.0;
     }
-    double calculateCost(double distance, double weight) const override {
+    double calculateCost(double distance, double weight) const {
         return distance * 0.5 + weight * 0.1;
     }
 };
 
 class Bicycle : public Vehicle {
 public:
-    double calculateTime(double distance) const override {
+    double calculateTime(double distance) const {
         return distance / 20.0;
     }
-    double calculateCost(double distance, double weight) const override {
+    double calculateCost(double distance, double weight) const {
         return distance * 0.05;
     }
 };
 
 class Carriage : public Vehicle {
 public:
-    double calculateTime(double distance) const override {
+    double calculateTime(double distance) const {
         return distance / 10.0;
     }
-    double calculateCost(double distance, double weight) const override {
+    double calculateCost(double distance, double weight) const {
         return distance * 0.3 + weight * 0.2;
     }
 };
