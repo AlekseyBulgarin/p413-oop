@@ -1,6 +1,15 @@
-﻿#include <iostream>
+#include <iostream>
+
+using namespace std;
+
+template<typename T>
+T minValue(T a, T b) {
+	return (a < b) ? a : b;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	setlocale(LC_ALL, "RU");
+
+	cout << minValue(1, 2);
 }
